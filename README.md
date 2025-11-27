@@ -1,71 +1,79 @@
-# Proyecto 5C – Big Data (Yellow Taxi NYC)
-Análisis comparativo de propinas ("tips") de los Yellow Taxis de Nueva York usando una arquitectura moderna basada en AWS S3, AWS Lambda, Supabase y Jupyter Notebook.
+readme: |
+  # Proyecto 5C – Big Data (Yellow Taxi NYC)
 
-Este proyecto forma parte del curso de Datos Masivos y tiene como objetivo construir un flujo de datos real, procesar datasets auténticos y generar visualizaciones y conclusiones basadas en un caso práctico.
+  Análisis comparativo de propinas ("tips") de los Yellow Taxis de Nueva York utilizando una arquitectura moderna basada en AWS S3, AWS Lambda, Supabase y Jupyter Notebook.
 
----
+  Este proyecto es parte del curso de Datos Masivos y su objetivo es construir un flujo real de procesamiento de datos, aplicar técnicas de análisis y generar insights basados en datasets auténticos.
 
-# 🚀 Arquitectura General
+  ---
 
-El flujo de datos implementado en este proyecto es:
+  # 🚀 Arquitectura General del Proyecto
 
-Dataset (CSV)
-→ AWS S3 (Raw Layer)
-→ AWS Lambda (Procesamiento automático)
-→ Supabase (Base de Datos PostgreSQL)
-→ Jupyter Notebook (Análisis y Visualización)
+  Dataset (CSV)
+        → AWS S3 (Raw Layer)
+              → AWS Lambda (Procesamiento)
+                    → Supabase (PostgreSQL)
+                          → Jupyter Notebook (Análisis & Visualización)
 
+  ## Servicios utilizados
 
-### **Servicios utilizados**
+  | Servicio        | Función en el proyecto |
+  |-----------------|-------------------------|
+  | **AWS S3**      | Almacenamiento de datos crudos (datasets 2016). |
+  | **AWS Lambda**  | Procesamiento automático cuando se suben archivos a S3. |
+  | **Supabase**    | Base de datos PostgreSQL + API REST. |
+  | **Jupyter**     | Exploración, análisis y visualización. |
 
-| Servicio        | Rol en el proyecto |
-|-----------------|--------------------|
-| **AWS S3**      | Almacena los datasets crudos (enero y febrero 2016). |
-| **AWS Lambda**  | Procesa automáticamente los archivos al subirse a S3. |
-| **Supabase**    | Actúa como base de datos y API REST para guardar las métricas procesadas. |
-| **Jupyter**     | Herramienta principal para análisis, gráficos y conclusiones del equipo. |
+  ---
 
----
+  # 📁 Estructura del Repositorio
 
-# 📁 Estructura del Repositorio
-│
-├── docs/ # Documentación del proyecto
-│ ├── informe_proyecto.md
-│ └── diagramas_arquitectura.png
-│
-├── infra/ # Infraestructura y código backend
-│ └── lambda_processors/ # Código para la función AWS Lambda
-│ ├── handler.py
-│ └── requirements.txt
-│
-├── notebooks/ # Jupyter notebooks del análisis
-│ ├── .gitkeep
-│ └── exploracion_inicial.ipynb
-│
-├── .env.example # Plantilla (segura) del archivo de configuración
-├── .gitignore # Archivos que deben ser ignorados por Git
-│
-└── README.md # Este archivo
+  proyecto5c-datosmasivos/
+  │
+  ├── docs/                       # Documentación del proyecto
+  │   ├── informe_proyecto.md
+  │   └── diagramas_arquitectura.png
+  │
+  ├── infra/                      # Infraestructura / Backend
+  │   └── lambda_processors/
+  │       ├── handler.py
+  │       └── requirements.txt
+  │
+  ├── notebooks/                  # Jupyter notebooks del análisis
+  │   ├── .gitkeep
+  │   └── exploracion_inicial.ipynb
+  │
+  ├── .env.example                # Plantilla del archivo .env (segura)
+  ├── .gitignore                  # Evita subir archivos sensibles
+  │
+  └── README.md
 
+  ---
 
----
+  # 👥 Colaboración entre Miembros del Equipo
 
-# 👥 Colaboración en Equipo
+  Este proyecto permite trabajo en equipo de manera segura.
 
-Todos los miembros del equipo trabajan sobre el mismo repositorio, siguiendo estas reglas:
+  ## Cada miembro tendrá:
+  - Su propio **usuario IAM** en AWS.
+  - Su propio **Access Key & Secret Key**.
+  - Acceso al repositorio como colaborador.
+  - La misma URL y anon key de Supabase.
 
-### **Cada miembro tendrá:**
-- Su propio **usuario IAM** dentro de la cuenta AWS del proyecto.
-- Su propio **Access Key + Secret Key**.
-- Acceso de lectura/escritura al bucket S3 asignado.
-- Acceso como colaborador al repositorio de GitHub.
-- La misma URL y **anon key** de Supabase.
+  ## Ningún miembro debe compartir:
+  - Access Keys de AWS  
+  - Secret Keys de AWS  
+  - `service_role key` de Supabase  
+  - Su archivo `.env` real  
 
-### **Ningún miembro comparte:**
-❌ Access Keys  
-❌ Secret Keys  
-❌ service_role key de Supabase  
-❌ `.env` real  
+  ---
+
+  # ⚙️ Instalación y Configuración del Entorno
+
+  A continuación se detallan los pasos que cada miembro del equipo debe seguir:
+
+  ## 1️⃣ Clonar el repositorio
+
 
 ---
 
