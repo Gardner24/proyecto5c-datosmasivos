@@ -1,4 +1,4 @@
-readme: |
+
   # Proyecto 5C – Big Data (Yellow Taxi NYC)
 
   Análisis comparativo de propinas ("tips") de los Yellow Taxis de Nueva York utilizando una arquitectura moderna basada en AWS S3, AWS Lambda, Supabase y Jupyter Notebook.
